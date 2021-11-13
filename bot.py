@@ -110,7 +110,7 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
-# Emoji Modulu (aykhan_s)
+# Emoji Modulu (aykhan_s) .
 @client.on(events.NewMessage(pattern="^/etag ?(.*)"))
 async def etag(event):
   global anlik_calisan
