@@ -55,13 +55,13 @@ async def help(event):
 async def mentionall(event):
   global anlik_calisan
   if event.is_private:
-    return await event.respond("Bu əmr qruplarda və kanallarda istifadə edilə bilər!")
+    return await event.respond("__Bu əmr qruplarda və kanallarda istifadə edilə bilər!__")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("Yalnız adminlər hamısını qeyd edə bilər!")
+    return await event.respond("__Yalnız adminlər hamısını qeyd edə bilər!__")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -70,11 +70,11 @@ async def mentionall(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("Mən köhnə mesajlar üçün üzvləri qeyd edə bilmərəm! (qrupa əlavə edilməzdən əvvəl göndərilən mesajlar)")
+        return await event.respond("__Mən köhnə mesajlar üçün üzvləri qeyd edə bilmərəm! (qrupa əlavə edilməzdən əvvəl göndərilən mesajlar)__")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("mənə arqument ver!")
+    return await event.respond("__mənə arqument ver!__")
   else:
-    return await event.respond("Başqalarını qeyd etmək üçün mesaja cavab verin və ya mənə mətn yazın!")
+    return await event.respond("__Başqalarını qeyd etmək üçün mesaja cavab verin və ya mənə mətn yazın!__")
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
@@ -115,13 +115,13 @@ async def mentionall(event):
 async def etag(event):
   global anlik_calisan
   if event.is_private:
-    return await event.respond("Bu əmr qruplarda və kanallarda istifadə edilə bilər!")
+    return await event.respond("__Bu əmr qruplarda və kanallarda istifadə edilə bilər!__")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("Bütün bunlar haqqında yalnız idarəçilər danışa bilər!”)
+    return await event.respond("__Bütün bunlar haqqında yalnız idarəçilər danışa bilər!__”)
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -130,9 +130,9 @@ async def etag(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("Köhnə yazılar üçün üzvləri qeyd edə bilmərəm! (qrupa əlavə edilməzdən əvvəl göndərilən mesajlar)")
+        return await event.respond("K__öhnə yazılar üçün üzvləri qeyd edə bilmərəm! (qrupa əlavə edilməzdən əvvəl göndərilən mesajlar)__")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("mənə arqument ver!")
+    return await event.respond("__mənə arqument ver!__")
   else:
     return await event.respond("Başqalarını qeyd etmək üçün mesaja cavab verin və ya mənə mətn yazın!")
   
