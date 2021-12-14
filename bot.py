@@ -40,8 +40,8 @@ async def start(event):
                    )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**Nexustagger bot'un Kömək Menüsü**\n\nƏmir: /tag \n  Bu əmri başqalarına demək istədiyiniz mətnlə birlikdə istifadə edə bilərsiniz. \nEmoji tagı üçün: /etag'yazın  \n Bu əmri cavab olaraq istifadə edə bilərsiniz. istənilən mesaj Bot istifadəçiləri cavab mesajına işarələyəcək"
-         await event.reply(helptext,
+  helptext = "**Nexustagger bot'un Köməl Menyusu**\n\nƏmirlər: /tag \n  Bu əmri başqalarına demək istədiyiniz mətnlə birlikdə istifadə edə bilərsiniz. \nEmoji tag: /etag'Bu əmri cavab olaraq istifadə edə bilərsiniz. istənilən mesaj Bot istifadəçiləri cavab mesajına işarələyəcək"
+  await event.reply(helptext,
                     buttons=(
                       [Button.url('🌟 Məni Bir Gruba Eklə', 'https://t.me/NexusTaggerbot?startgroup=a'),
                        Button.url('🌐 Support', 'https://t.me/NEXUS_MMC'),
