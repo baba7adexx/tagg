@@ -61,7 +61,8 @@ async def mentionall(event):
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("__Yalnız adminlər hamısını qeyd edə bilər!__")
+
+    return await event.respond("__Yalnızca yöneticiler hepsinden bahsedebilir!__")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -74,7 +75,7 @@ async def mentionall(event):
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
     return await event.respond("__mənə arqument ver!__")
   else:
-    return await event.respond("__Başqalarını qeyd etmək üçün mesaja cavab verin və ya mənə mətn yazın!__")
+    return await event.respond("__Yalnızca yöneticiler hepsinden bahsedebilir!__")
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
