@@ -55,8 +55,8 @@ async def help(event):
 async def mentionall(event):
   global anlik_calisan
   if event.is_private:
-    return await event.respond("__Bu əmr qruplarda və kanallarda istifadə edilə bilər!__")
-  
+    return await event.respond("__Yalnızca yöneticiler hepsinden bahsedebilir!__")
+   
   admins = []
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
