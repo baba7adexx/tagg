@@ -44,7 +44,7 @@ async def help(event):
   await event.reply(helptext,
                     buttons=(
                       [Button.url('➕ Gurup Eklə', 'https://t.me/BStaggerbot?startgroup=a'),
-                       Button.url('🌐 Support', 'https://t.me/BLACK_MMC'),
+                       Button.url('⚕️ Support', 'https://t.me/BLACK_MMC'),
                       Button.url('👨🏻‍💻 Sahibim', 'https://t.me/F_r_o_z_e_d_i')]
                     ),
                     link_preview=False
