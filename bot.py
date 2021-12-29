@@ -1,4 +1,4 @@
-import os, logging, asyncio
+Buimport os, logging, asyncio
 import random
 from telethon import Button
 from telethon import TelegramClient, events
@@ -33,7 +33,6 @@ async def start(event):
   await event.reply("**ΒЅͲαɠεɾΒσʈ**, Qrupda və ya kanalda demək olar ki, hər bir üzvü qeyd edə bilərəm 🤓\nDaha ətraflı məlumat üçün **/help**'yazın.",
                     buttons=(
                       [Button.url('➕ Gurup Eklə', 'https://t.me/BStaggerbot?startgroup=a'),
-                      Button.url('🐈 Söhbət Gurup', 'https://t.me/Cat_House_Gurups'),
                       Button.url('⚕️ Support', 'https://t.me/BLACK_MMC'),
                       Button.url('👨🏻‍💻 Sahibim', 'https://t.me/F_r_o_z_e_d_i')]
                     ),
