@@ -122,7 +122,7 @@ async def etag(event):
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("__Bütün bunlar haqqında yalnız idarəçilər danışa bilər!__”)
+    return await event.respond("__Bütün bunlar haqqında yalnız idarəçilər danışa bilər!__")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
