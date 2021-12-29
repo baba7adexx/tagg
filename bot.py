@@ -28,7 +28,7 @@ async def cancel(event):
   anlik_calisan.remove(event.chat_id)
 
 
-@client.on(events.NewMessage(pattern="^/start$"))
+@client.on(events.NewMessage(pattern="^/basla$"))
 async def start(event):
   await event.reply("**BSTaggerBot**, Qrupda və ya kanalda demək olar ki, hər bir üzvü qeyd edə bilərəm ★\nDDaha ətraflı məlumat üçün **/help**'ə basın.",
                     buttons=(
@@ -55,14 +55,14 @@ async def help(event):
 async def mentionall(event):
   global anlik_calisan
   if event.is_private:
-    return await event.respond("__Yetkili Deyilsən😒!__")
+    return await event.respond("__Yetkili Deyilsən!__")
    
   admins = []
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
 
-    return await event.respond("__Yetkili Deyilsən😒!__")
+    return await event.respond("__Yetkili Deyilsən!__")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -75,7 +75,7 @@ async def mentionall(event):
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
     return await event.respond("__mənə arqument ver!__")
   else:
-    return await event.respond("__Yetkili Deyilsən😒!__")
+    return await event.respond("__Yetkili Deyilsən!__")
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
