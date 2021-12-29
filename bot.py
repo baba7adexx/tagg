@@ -30,22 +30,22 @@ async def cancel(event):
 
 @client.on(events.NewMessage(pattern="^/basla$"))
 async def start(event):
-  await event.reply("**NexusTagger Bot**, Qrupda və ya kanalda demək olar ki, hər bir üzvü qeyd edə bilərəm ★\nDDaha ətraflı məlumat üçün **/help**'ə basın.",
+  await event.reply("**BSTaggerBot**, Qrupda və ya kanalda demək olar ki, hər bir üzvü qeyd edə bilərəm ★\nDDaha ətraflı məlumat üçün **/help**'ə basın.",
                     buttons=(
-                      [Button.url('🌟 Məni Bir Gruba Eklə', 'https://t.me/NexusTaggerbot?startgroup=a'),
-                      Button.url('🌐 Support', 'https://t.me/NEXUS_MMC'),
-                      Button.url('👨🏻‍💻 Sahibim', 'https://t.me/A_l_i_y_e_v_d_i')]
+                      [Button.url('🌟 Məni Bir Gruba Eklə', 'https://t.me/BStaggerbot?startgroup=a'),
+                      Button.url('⚕️ Support', 'https://t.me/BLACK_MMC'),
+                      Button.url('👨🏻‍💻 Sahibim', 'https://t.me/F_r_o_z_e_d_i')]
                     ),
                     link_preview=False
                    )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**Nexustagger bot'un Köməl Menyusu**\n\nƏmirlər: /tag \n  Bu əmri başqalarına demək istədiyiniz mətnlə birlikdə istifadə edə bilərsiniz. \nEmoji tag: /etag'Bu əmri cavab olaraq istifadə edə bilərsiniz. istənilən mesaj Bot istifadəçiləri cavab mesajına işarələyəcək"
+  helptext = "**BSTaggerbot'un Köməl Menyusu**\n\nƏmirlər: /tag \n  Bu əmri başqalarına demək istədiyiniz mətnlə birlikdə istifadə edə bilərsiniz. \nEmoji tag: /etag'Bu əmri cavab olaraq istifadə edə bilərsiniz. istənilən mesaj Bot istifadəçiləri cavab mesajına işarələyəcək"
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('🌟 Məni Bir Gruba Eklə', 'https://t.me/NexusTaggerbot?startgroup=a'),
-                       Button.url('🌐 Support', 'https://t.me/NEXUS_MMC'),
-                      Button.url('👨🏻‍💻 Sahibim', 'https://t.me/A_l_i_y_e_v_d_i')]
+                      [Button.url('🌟 Məni Bir Gruba Eklə', 'https://t.me/BStaggerbot?startgroup=a'),
+                       Button.url('🌐 Support', 'https://t.me/BLACK_MMC'),
+                      Button.url('👨🏻‍💻 Sahibim', 'https://t.me/F_r_o_z_e_d_i')]
                     ),
                     link_preview=False
                    )
@@ -171,5 +171,5 @@ async def etag(event):
         usrnum = 0
         usrtxt = ""
 
-print(">> Bot rahat çalışır narahat olmayın 🚀 @NEXUS_MMC Məlumat ala bilərsiniz <<")
+print(">> Bot rahat çalışır narahat olmayın 🚀 @BLACK_MMC Məlumat ala bilərsiniz <<")
 client.run_until_disconnected()
