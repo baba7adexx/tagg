@@ -28,11 +28,11 @@ async def cancel(event):
   anlik_calisan.remove(event.chat_id)
 
 
-@client.on(events.NewMessage(pattern="^/basla$"))
+@client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   await event.reply("**BSTaggerBot**, Qrupda və ya kanalda demək olar ki, hər bir üzvü qeyd edə bilərəm ★\nDDaha ətraflı məlumat üçün **/help**'ə basın.",
                     buttons=(
-                      [Button.url('🌟 Məni Bir Gruba Eklə', 'https://t.me/BStaggerbot?startgroup=a'),
+                      [Button.url('🌟 Məni Bir Gruba Əlavə et', 'https://t.me/BStaggerbot?startgroup=a'),
                       Button.url('⚕️ Support', 'https://t.me/BLACK_MMC'),
                       Button.url('👨🏻‍💻 Sahibim', 'https://t.me/F_r_o_z_e_d_i')]
                     ),
@@ -40,11 +40,11 @@ async def start(event):
                    )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**BSTaggerbot'un Köməl Menyusu**\n\nƏmirlər: /tag \n  Bu əmri başqalarına demək istədiyiniz mətnlə birlikdə istifadə edə bilərsiniz. \nEmoji tag: /etag'Bu əmri cavab olaraq istifadə edə bilərsiniz. istənilən mesaj Bot istifadəçiləri cavab mesajına işarələyəcək"
+  helptext = "**BSTaggerbot'un Köməl Menyusu**\n\nƏmirlər: /tag \nBu əmri başqalarına demək istədiyiniz mətnlə birlikdə istifadə edə bilərsiniz. \nEmoji tag: /etag'Bu əmri cavab olaraq istifadə edə bilərsiniz. istənilən mesaj Bot istifadəçiləri cavab mesajına işarələyəcək"
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('🌟 Məni Bir Gruba Eklə', 'https://t.me/BStaggerbot?startgroup=a'),
-                       Button.url('🌐 Support', 'https://t.me/BLACK_MMC'),
+                      [Button.url('🌟 Məni Bir Gruba Əlavə et', 'https://t.me/BStaggerbot?startgroup=a'),
+                       Button.url('⚕️ Support', 'https://t.me/BLACK_MMC'),
                       Button.url('👨🏻‍💻 Sahibim', 'https://t.me/F_r_o_z_e_d_i')]
                     ),
                     link_preview=False
@@ -55,14 +55,14 @@ async def help(event):
 async def mentionall(event):
   global anlik_calisan
   if event.is_private:
-    return await event.respond("__Yalnızca yöneticiler hepsinden bahsedebilir!__")
+    return await event.respond("__Yetkili Deyilsən😒!__")
    
   admins = []
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
 
-    return await event.respond("__Yalnızca yöneticiler hepsinden bahsedebilir!__")
+    return await event.respond("__Yetkili Deyilsən😒!__")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -75,7 +75,7 @@ async def mentionall(event):
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
     return await event.respond("__mənə arqument ver!__")
   else:
-    return await event.respond("__Yalnızca yöneticiler hepsinden bahsedebilir!__")
+    return await event.respond("__Yetkili Deyilsən😒!__")
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
